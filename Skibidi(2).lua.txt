@@ -1,0 +1,97 @@
+local ScreenGui = Instance.new("ScreenGui")
+local ImageButton = Instance.new("ImageButton")
+local UICorner = Instance.new("UICorner")
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ImageButton.Parent = ScreenGui
+ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0.10615778, 0, 0.16217947, 0)
+ImageButton.Size = UDim2.new(0, 40, 0, 40)
+ImageButton.Draggable = true
+ImageButton.Image = "http://www.roblox.com/asset/?id=128157612592502"
+
+UICorner.CornerRadius = UDim.new(1, 10) 
+UICorner.Parent = ImageButton
+
+ImageButton.MouseButton1Down:Connect(function()
+    game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game)
+end)
+
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+repeat wait() until game:IsLoaded()
+local Window = Fluent:CreateWindow({
+    Title = "Krai Emote Tổng Hợp",
+    SubTitle = "All Game",
+    TabWidth = 157,
+    Size = UDim2.fromOffset(450, 300),
+    Acrylic = true,
+    Theme = "Light",
+    MinimizeKey = Enum.KeyCode.End
+})
+local Tabs = {
+        Main0=Window:AddTab({ Title="Thông Tin" }),
+        Main1=Window:AddTab({ Title="Thông Tin" }),
+        Main2=Window:AddTab({ Title="Thông Tin" }),
+        Main3=Window:AddTab({ Title="EMOTE PACK" }),
+        Main4=Window:AddTab({ Title="AFEM" }),
+        Main5=Window:AddTab({ Title="EMOTE 1" }),
+        Main6=Window:AddTab({ Title="EMOTE 2" }),
+       
+    Tabs.Main0:AddButton({
+    Title = "Discord",
+    Description = "TBoyRoblox Community",
+    Callback = function()
+        setclipboard("https://discord.gg/tboyroblox-community-1253927333920899153")
+    end
+})
+
+    Tabs.Main1:AddButton({
+    Title = "Youtuber",
+    Description = "kRaI",
+    Callback = function()
+        setclipboard("https://www.youtube.com/@K_Krai-BG")
+    end
+})
+
+    Tabs.Main2:AddButton({
+    Title = "Youtuber",
+    Description = "kRai ScRiPt",
+    Callback = function()
+        setclipboard("https://www.youtube.com/@K_Krai-BG")
+    end
+})
+    
+    Tabs.Main3:AddButton({
+    Title="EMOTE PACK",
+    Description="",
+    Callback=function()
+	loadstring(game:HttpGet("https://gist.githubusercontent.com/Defy-cloud/128d2dfc5030202b6d072807a89a790c/raw/043331f680a7d5954f0a1f9370560851ab3e3205/EmotePackFixer.lua"))()
+ end
+})
+
+Tabs.Main4:AddButton({
+    Title="AFEM",
+    Description="",
+    Callback=function()
+	loadstring(game:HttpGet("https://yarhm.mhi.im/scr?channel=afem", false))()
+  end
+})
+
+Tabs.Main5:AddButton({
+    Title = "EMOTE 1",
+    Description = "",
+    Callback = function()
+loadstring(game:HttpGetAsync("https://mark-hub-h2g9.onrender.com/raw/Fe%20All%20Emotes.lua=446d7afc"))()
+    end
+})
+
+Tabs.Main6:AddButton({
+    Title = "EMOTE 2",
+    Description = "",
+    Callback = function()
+        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Gi7331/scripts/main/Emote.lua"))(
+    end
+})  
